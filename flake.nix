@@ -14,16 +14,16 @@
           buildInputs = [
             pkgs.nodePackages.pnpm           # `pnpm`
             pkgs.nodePackages_latest.nodejs  # `node`
-            pkgs.jq                   
+            pkgs.jq                
+            pkgs.zsh   
           ];
 
           shellHook = ''
-            echo "Welcome to the TypeScript project environment!"
+            export SHELL=$(which zsh)
+            echo "Switched to zsh shell"
+            exec zsh
             export NODE_ENV=development
-            # Install npm dependencies if exist
-            if [ -f package.json ]; then
-              pnpm install
-            fi
+            export PATH="$(pnpm bin):$PATH"
           '';
         };
       }
