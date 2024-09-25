@@ -21,6 +21,7 @@
           shellHook = ''
             export NODE_ENV=development
             export PATH="$(pnpm bin):$PATH"
+            echo "node version: `node --version`"
           '';
         };
       }
