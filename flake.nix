@@ -14,14 +14,16 @@
           buildInputs = [
             pkgs.nodePackages.pnpm           # `pnpm`
             pkgs.nodePackages_latest.nodejs  # `node`
-            pkgs.jq                
-            pkgs.zsh   
+            pkgs.python310
+            pkgs.poetry
           ];
 
           shellHook = ''
             export NODE_ENV=development
             export PATH="$(pnpm bin):$PATH"
-            echo "node version: `node --version`"
+            echo "node version: `Node --version`"
+            echo `python3 --version`
+            poetry config virtualenvs.in-project true
           '';
         };
       }
