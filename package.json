@@ -1,0 +1,6 @@
+{
+	"devDependencies": {
+		"pino-pretty": "^11.2.2",
+		"pm2": "^5.4.2"
+	}
+}

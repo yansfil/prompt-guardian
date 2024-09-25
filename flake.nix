@@ -24,6 +24,9 @@
             echo "node version: `Node --version`"
             echo `python3 --version`
             poetry config virtualenvs.in-project true
+ 
+            # install pm2
+            pnpm install pm2 
           '';
         };
       }
