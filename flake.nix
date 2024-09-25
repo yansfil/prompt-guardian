@@ -19,9 +19,6 @@
           ];
 
           shellHook = ''
-            export SHELL=$(which zsh)
-            echo "Switched to zsh shell"
-            exec zsh
             export NODE_ENV=development
             export PATH="$(pnpm bin):$PATH"
           '';
